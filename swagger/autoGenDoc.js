@@ -27,7 +27,7 @@ let doc = {
     ],
     consumes: ['application/json'],
     produces: ['application/json']
-    }
+}
 
 
 swaggerAutogen(outputFile, endpointsFiles, doc).then(() => {
