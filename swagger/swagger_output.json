@@ -184,6 +184,28 @@
           }
         }
       }
+    },
+    "/tarefa/obter/tarefas": {
+      "get": {
+        "tags": [
+          "Tarefas"
+        ],
+        "description": "Endpoint para obter todas as tarefas do usuário logado.",
+        "parameters": [
+          {
+            "name": "x-auth-token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
