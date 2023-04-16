@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const tratarErrosEsperados = require('../functions/tratarErrosEsperados');
+const tratarErrosEsperados = require('../functions/tratarErrorEsperados');
 
 async function authUser(req, res, next) {
     const token = req.headers['x-auth-token'];

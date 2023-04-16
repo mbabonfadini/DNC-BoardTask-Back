@@ -4,6 +4,7 @@ const conectarBancoDados = require('../middlewares/conectarBD');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken')
 const EsquemaUsuario = require('../models/usuario');
+const authUser = require('../middlewares/authUser');
 const router = express.Router();
 
 
