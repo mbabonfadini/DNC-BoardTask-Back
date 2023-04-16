@@ -80,6 +80,54 @@
           }
         }
       }
+    },
+    "/tarefa/criar": {
+      "post": {
+        "tags": [
+          "Tarefas"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "x-auth-token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "posicao": {
+                    "example": "any"
+                  },
+                  "titulo": {
+                    "example": "any"
+                  },
+                  "descricao": {
+                    "example": "any"
+                  },
+                  "status": {
+                    "example": "any"
+                  },
+                  "dataEntrega": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
