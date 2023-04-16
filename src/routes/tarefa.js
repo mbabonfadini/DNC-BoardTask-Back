@@ -71,5 +71,28 @@ router.get('/obter/tarefas', authUser, conectarBancoDados, async function (req, 
   }
 });
 
+router.delete('/deletar/:id', authUser, conectarBancoDados, async function (req, res) {
+  try {
+    // #swagger.tags = ['Tarefas']
+    let idTarefa = req.params.id
+    const usuarioLogado = req.usuarioJwt.id;
+
+    const checkTarefa = await EsquemaTarefa.findOne({_id: idTarefa, usuarioCriador: usuarioLogado})
+    if(!checkTarefa){
+      throw new Error("Tarefa não encontrada ou pertence a outro usuário");
+    }
+    
+    const tarefaDeletada = await EsquemaTarefa.deleteOne({_id: idTarefa});
+
+      res.status(200).json({
+        status: "OK",
+        statusMensagem: "Tarefa deletada com sucesso.",
+        resposta: tarefaDeletada
+      })
+  }
+  catch (error) {
+    return tratarErrosEsperados(res, error)
+  }
+});
 
 module.exports = router;
