@@ -18,6 +18,9 @@
   "paths": {
     "/usuario/criar": {
       "post": {
+        "tags": [
+          "Usuario"
+        ],
         "description": "",
         "parameters": [],
         "responses": {
@@ -34,6 +37,37 @@
                   "nome": {
                     "example": "any"
                   },
+                  "email": {
+                    "example": "any"
+                  },
+                  "senha": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/usuario/logar": {
+      "post": {
+        "tags": [
+          "Usuario"
+        ],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
                   "email": {
                     "example": "any"
                   },
